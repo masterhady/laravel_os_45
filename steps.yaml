@@ -1,0 +1,48 @@
+1- terminal --> 
+        php -v   => 8.2 
+        > --> upgrade 
+
+2- Package Manager  --> composer 
+
+https://getcomposer.org/download/ 
+
+3- make sure composer --> composer -v 
+
+
+4- to create laravel project: 
+        1- composer global require laravel/installer
+            2- laravel new PROJECTNAME
+
+        OR 
+
+        2- composer create-project laravel/laravel PROJECTNAME
+
+5- cd your-new-project 
+
+6- to display all artisan command lines: 
+    php artisan 
+
+7- to run the server: 
+    php artisan serve 
+
+8- using v11 or v12 --> make error --> the defualt database is sqlite: 
+    change from .env 
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=laravel_os
+        DB_USERNAME=root
+        DB_PASSWORD=
+
+9-      npm --> nodemodules 
+        composer --> vendor 
+
+10- sec error --> can't find table: 
+        php artisan migrate   // crate tables in the database 
+
+11- to create a controller: 
+        - naming convention for laravel is:
+                https://style-guide.vivifyideas.com/laravel-style-guide.html#follow-laravel-naming-conventions
+
+        - php artisan make:controller ControllerName
+        
