@@ -45,4 +45,46 @@ https://getcomposer.org/download/
                 https://style-guide.vivifyideas.com/laravel-style-guide.html#follow-laravel-naming-conventions
 
         - php artisan make:controller ControllerName
-        
+______________________________________________________________
+
+
+MVC --> Models Views Controller 
+
+
+connect to database : 
+to deal with the database in laravel, we need to create a model
+
+---> create schema: 
+
+--> Migrations --> create tables 
+
+=---> php artisan migrate  --> to run migrations file to effect in the database 
+
+==> php artisan migrate:rollback  --> to rollback the last migration
+
+==> php artisan make:migration create_users_table  --> to create migration file
+
+
+
+avalable datatype in laravel: 
+        https://laravel.com/docs/12.x/migrations#columns
+
+
+column in laravel --> by default --> Null 
+
+__________________________________________________ 
+
+Courses : 
+                1- create controller --> php artisan make:controller CourseController 
+
+
+        ORM --> Object Relational Mapping
+
+
+        table --> plural --> courses 
+
+
+        model --> singular --> Course --> object --> row 
+
+php artisan make:model Course --> to create model
+
