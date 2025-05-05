@@ -86,5 +86,62 @@ Courses :
 
         model --> singular --> Course --> object --> row 
 
-php artisan make:model Course --> to create model
+php artisan make:model Course --> to create model --> table courses 
 
+___________________________________________________________
+
+Module --> Courses: 
+        1- create migration files --> config table: 
+                php artisan make:migration create_courses_table 
+        2- run migration: 
+                php artisan migrate 
+        3- create your CourseController:
+                php artisan make:controller CourseController 
+        4- create Model:
+                php artisan make:model Course
+        5- implement your routes in web.php
+        6- create your views
+
+_____________________________________________________________________
+
+create module category: 
+        create migration, models, controller, routes, views 
+php artisan make:model Category -mcr
+
+        -m --> crreate migration files --> DONE
+        -c --> controller  --> 
+        -r --> resource 
+
+
+  GET|HEAD        categories .......................... categories.index › CategoryController@index
+
+  POST            categories ....................... categories.store › CategoryController@store
+
+
+  GET|HEAD        categories/create ......... categories.create › CategoryController@create
+
+
+  GET|HEAD        categories/{category} ......... categories.show › CategoryController@show
+
+
+
+  PUT|PATCH       categories/{category} ....................... categories.update › CategoryController@update
+
+
+  DELETE          categories/{category} ..................... categories.destroy › CategoryController@destroy
+
+  GET|HEAD        categories/{category}/edit ...................... categories.edit › CategoryController@edit
+
+
+
+  Categor Course 
+
+  couser --> one category 
+
+  category --> many courses
+
+  one to many 
+
+  course belongs to category 
+
+  category has many courses 

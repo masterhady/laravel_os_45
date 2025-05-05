@@ -22,10 +22,10 @@
         <label class="form-label">Image</label>
         <input type="text" class="form-control" name="image" value={{$course->image}}>
       </div>
-      <div class="mb-3">
+      {{-- <div class="mb-3">
         <label class="form-label">Category</label>
         <input type="text" class="form-control" name="category" value={{$course->category}}>
-      </div>
+      </div> --}}
    
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

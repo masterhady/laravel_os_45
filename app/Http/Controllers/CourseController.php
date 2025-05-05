@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Course;
+use App\Models\Category;
+
 
 use Illuminate\Http\Request;
 
@@ -23,8 +25,11 @@ class CourseController extends Controller
 
 
     function create(){
-        // return "hellooo";
-        return view('courses.create');
+        // return "hellooo";\
+        // madel category 
+        $categories = Category::all();
+
+        return view('courses.create', compact('categories'));
     }
 
 
@@ -32,22 +37,30 @@ class CourseController extends Controller
         $course = new Course(); // new object == new row in database
 
         request()->validate([
-            "name" => ["required", "string", "max:255"],
+            "name" => ["required", "string", "min:3"],
             "price" => ["required", "numeric"],
-            "category" => ["required", "string", "max:255"],
+            // "category" => ["required", "string", "max:255"],
+        ],[
+            "name.required" => "Course Name is Manadatory",
+            "name.min" => "Course Name is Invalid",
+            "price.required" => "Price is must"
+
         ]);
+        // dd(request());
 
         $name = request("name");
         $price = request("price");
         $description = request("description");
         $image = request("image");
-        $category = request("category");
+        $category_id = request("category_id");
 
         $course->name = $name;
         $course->price = $price;
         $course->description = $description;
         $course->image = $image;
-        $course->category = $category;
+        $course->category_id = $category_id;
+
+        // $course->category = $category;
         $course->save(); // save to database
         return to_route("courses.index"); // pass the course to the view
         // return to_route("courses.show", $course->id); // redirect to the course page
@@ -69,13 +82,13 @@ class CourseController extends Controller
         $price = request("price");
         $description = request("description");
         $image = request("image");
-        $category = request("category");
+        // $category = request("category");
 
         $course->name = $name;
         $course->price = $price;
         $course->description = $description;
         $course->image = $image;
-        $course->category = $category;
+        // $course->category = $category;
         $course->save(); // save to database
         return to_route("courses.index");
       

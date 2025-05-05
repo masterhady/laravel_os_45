@@ -27,7 +27,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/courses">Courses</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+              </li>
              
             </ul>
            

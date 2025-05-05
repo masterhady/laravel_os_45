@@ -38,13 +38,14 @@
         <label class="form-label">Image</label>
         <input type="text" class="form-control" name="image" value="{{old('image')}}">
       </div>
-      <div class="mb-3">
-        <label class="form-label">Category</label>
-        <input type="text" class="form-control" name="category" value="{{old('category')}}">
-        @error('category')
-          <div class="text-danger">{{ $message }}</div>
-      @enderror
-      </div>
+      {{-- @dd($categories) --}}
+
+      <select class="form-select" name="category_id">
+        @foreach ($categories as $category)
+          <option value={{$category->id}}>{{$category->name}}</option>
+        @endforeach
+        
+      </select>
    
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

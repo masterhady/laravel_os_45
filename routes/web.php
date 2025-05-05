@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CategoryController;
+
 
 
 
@@ -36,8 +38,11 @@ Route::put("/courses/{id}", [CourseController::class, 'update'])->name("courses.
 
 Route::delete("/courses/{id}", [CourseController::class, 'destroy'])->name("courses.destroy");
 
+// __________________________________________
+//  Resource Controller: 
 
-// mvc 
+Route::resource("categories", CategoryController::class);
 
-/// routes  --> web.php  --> manage all routes  
-// viwes: --> resources/views
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

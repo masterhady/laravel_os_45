@@ -2,6 +2,8 @@
 
 {{-- @dd($course) --}}
 
+{{-- @dd($course->c.ategory) --}}
+
 @section('section1')
 <div class="row">
         <div class="col-md-4 mb-4">
@@ -14,6 +16,7 @@
                     <p class="card-text">{{$course->price}}</p>
                     <p class="card-text">{{$course->updated_at}}</p>
                     <p class="card-text">{{$course->created_at}}</p>
+                    <p class="card-text">{{$course->category->name}}</p>
 
                 </div>
             </div>
