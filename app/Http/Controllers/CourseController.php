@@ -9,7 +9,15 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    //
+    
+    function __construct(){
+        $this->middleware("auth");
+
+    }
+    
+
+
+
     function index()
     {
         $courses = Course::all(); 

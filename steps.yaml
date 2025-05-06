@@ -145,3 +145,113 @@ php artisan make:model Category -mcr
   course belongs to category 
 
   category has many courses 
+  _____________________________________________
+
+  module --> Teacher: 
+
+        create migration, model, controller, factory, seeder, request, policy
+
+        php artisan make:model Teacher --all 
+
+1- Migration Files: 
+        make migration + run migration 
+
+2- Controller Files: 
+
+
+3- Model File: 
+
+
+4- Route
+
+
+5- Views
+
+
+
+---> add column --> created_by 
+ 
+ --> Create Migration Files: 
+
+
+ teachers       users
+
+
+ teacher --> belongs --> one user 
+
+ users --> has many -> teachers 
+
+ ___________________________________________________________
+
+ // add new column --> users --> role enum
+
+ // create authoirization --> 
+ admin
+
+
+ user create teacher --> delete + update  
+
+
+ guest 
+
+
+ ----> Gate 
+
+ Day 4: 
+        1- create Request Files: 
+                 php artisan make:model Teacher --all 
+
+        2- move all validations rules to Request/StoreTeacherRequest.php
+
+        3- create function messages Request/StoreTeacherRequest.php --> to write all custom messgas
+
+        4-Middleware: 
+                1- auth: 
+                        1- Routes:
+                        ->middleware("auth");
+
+
+                        2- Controller
+                                function __construct(){
+                                        $this->middleware("auth")->only["", "", ]
+                                        OR
+                                        $this->middleware("auth")->except["", "", ]
+                                }
+                         
+
+                        3- StoreTeacherRequest: 
+                                 public function authorize(): bool
+                                {
+                                                
+                                        return Auth::user() !== null ;
+                                }
+
+5- Authorization: 
+        1- Gate: 
+               in folder --> Provider/AppServiceProvider.php 
+                use App\Models\Teacher;
+                use App\Models\User;
+                use Illuminate\Support\Facades\Gate;
+
+                public function boot()
+                {
+                    Gate::define("create-teacher", function (User $user) {
+                        return $user->role === "admin";
+                    });
+                }
+
+to use Gate: 
+
+        1- in Controller: 
+                use Illuminate\Support\Facades\Gate;
+
+                public function store(StoreTeacherRequest $request)
+                {
+                   Gate::authorize("create-teacher")
+                }
+
+        2- in Views: 
+                @can("create-teacher")
+                        <a href="{{ route("teachers.create") }}" class="btn btn-primary">Create Teacher</a>
+                @endcan
+                __________________________________

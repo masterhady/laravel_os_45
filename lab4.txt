@@ -1,0 +1,8 @@
+1- view the created by for comment and post 
+
+2- only user who created the post or comment can delete and update 
+
+3- add rules (admin and user) --> admin can do all crud post, comment 
+
+4- only user logged in can create post or comment otherwise can show and view all posts and all comments 
+

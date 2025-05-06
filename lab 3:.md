@@ -15,3 +15,4 @@ https://laravel.com/docs/10.x/seeding#using-model-factories
         you will find the image in request.files. 
 
     5- bonus search on "slug"
+    
