@@ -52,3 +52,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource("teachers", TeacherController::class);
 // ->middleware("auth");
+
+
+// Route::get("/itios", function(){
+//     return "hello";
+// });

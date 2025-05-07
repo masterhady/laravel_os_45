@@ -12,8 +12,8 @@ class StoreTeacherRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        // return true;
-        return Auth::user() !== null ;
+        return true;
+        // return Auth::user() !== null ;
     }
 
     /**

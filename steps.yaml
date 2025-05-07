@@ -255,3 +255,21 @@ to use Gate:
                         <a href="{{ route("teachers.create") }}" class="btn btn-primary">Create Teacher</a>
                 @endcan
                 __________________________________
+
+Day5: 
+        php artisan install:api
+
+
+best practice--> unfiform data --> inform of object --> apiResource 
+
+php artisan make:resource TeacherResource
+
+-------------------------
+sanctum --> authintaction 
+
+
+Auth API:       
+        JWT 
+        Sanctum
+Types  API: 
+
