@@ -1,0 +1,7 @@
+1- all crud and relation and authintecate and authorization that done before recreate it using API 
+2- use resource for post and resource for comment 
+3- use Request For validation
+4- make auth system (register, login, logout) 
+Bonus -> Search: 
+        1- Policy
+        2- Morph in laravel 
